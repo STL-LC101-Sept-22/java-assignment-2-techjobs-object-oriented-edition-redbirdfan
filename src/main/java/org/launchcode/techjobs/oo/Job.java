@@ -1,5 +1,4 @@
 package org.launchcode.techjobs.oo;
-
 import java.util.Objects;
 
 public class Job {
@@ -7,7 +6,7 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private static String name;
     private String employer;
     private String location;
     private String positionType;
@@ -20,7 +19,8 @@ public class Job {
         id = nextId;
         nextId++;
     }
-    private Job(String name, String employer, String location, String positionType, String coreCompetency){
+    public Job(String name, String employer, String location, String positionType, String coreCompetency){
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -33,9 +33,9 @@ public class Job {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Job)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.getId();
+        return id == job.id;
     }
 
     @Override
@@ -48,26 +48,28 @@ public class Job {
     //  and id.
 
 
-    public int getId() {
-        return id;
-    }
-    public String getName(){
+    public static String getName(){
         return name;
     }
     public String getEmployer(){
+
         return employer;
     }
     public String getLocation(){
+
         return location;
     }
     public String getPositionType(){
+
         return positionType;
     }
     public String getCoreCompetency(){
+
         return coreCompetency;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -85,6 +87,10 @@ public class Job {
 
     public void setCoreCompetency(String coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    public int getId() {
+        return id;
     }
 }
 
