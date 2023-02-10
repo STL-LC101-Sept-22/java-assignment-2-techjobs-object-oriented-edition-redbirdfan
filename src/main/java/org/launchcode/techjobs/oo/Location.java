@@ -54,4 +54,8 @@ public class Location {
         this.value = value;
     }
 
+    public void setId(int id){
+        this.id= id;
+    }
+
 }

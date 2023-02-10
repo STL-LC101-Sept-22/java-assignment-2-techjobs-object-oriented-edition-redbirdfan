@@ -19,7 +19,8 @@ public class Job {
         id = nextId;
         nextId++;
     }
-    public Job(String name, String employer, String location, String positionType, String coreCompetency){
+
+    public Job(String name, String employer, String location, String positionType, String coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -48,31 +49,34 @@ public class Job {
     //  and id.
 
 
-    public static String getName(){
+    public static String getName() {
         return name;
     }
-    public String getEmployer(){
+
+    public String getEmployer() {
 
         return employer;
     }
-    public String getLocation(){
+
+    public String getLocation() {
 
         return location;
     }
-    public String getPositionType(){
+
+    public String getPositionType() {
 
         return positionType;
     }
-    public String getCoreCompetency(){
+
+    public String getCoreCompetency() {
 
         return coreCompetency;
     }
 
-    public void setName(String name) {
 
+    public void setName(String name) {
         this.name = name;
     }
-
     public void setEmployer(String employer) {
         this.employer = employer;
     }
@@ -80,17 +84,28 @@ public class Job {
     public void setLocation(String location) {
         this.location = location;
     }
-
     public void setPositionType(String positionType) {
         this.positionType = positionType;
     }
 
     public void setCoreCompetency(String coreCompetency) {
         this.coreCompetency = coreCompetency;
-    }
+        }
+
 
     public int getId() {
+
         return id;
     }
-}
 
+    @Override
+    public String toString() {
+
+        return ("\n" + "ID: " + getId() +
+                "\n" + "Name: " + getName() +
+                "\n" + "Employer: " + getEmployer() +
+                "\n" + "Location: " + getLocation() +
+                "\n" + "Position Type: " + getPositionType() +
+                "\n" + "Core Competency: " + getCoreCompetency() + "\n");
+    }
+}
