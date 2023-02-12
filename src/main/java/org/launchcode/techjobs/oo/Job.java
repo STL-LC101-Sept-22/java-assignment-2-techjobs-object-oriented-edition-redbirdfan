@@ -22,11 +22,11 @@ public class Job {
 
     public Job(String name, String employer, String location, String positionType, String coreCompetency) {
         this();
-        this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
+        this.name = name;
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -54,22 +54,18 @@ public class Job {
     }
 
     public String getEmployer() {
-
         return employer;
     }
 
     public String getLocation() {
-
         return location;
     }
 
     public String getPositionType() {
-
         return positionType;
     }
 
     public String getCoreCompetency() {
-
         return coreCompetency;
     }
 
@@ -94,12 +90,22 @@ public class Job {
 
 
     public int getId() {
-
         return id;
     }
 
     @Override
     public String toString() {
+            if (this.name == "") {
+                this.name = "Data not available";
+            } else if (this.employer == "") {
+                this.employer = "Data not available";
+            } else if(this.location == "") {
+                this.location = "Data not available";
+            } else if (this.positionType == "") {
+                this.positionType = "Data not available";
+            } else if (this.coreCompetency == "") {
+                this.coreCompetency = "Data not available";
+            }
 
         return ("\n" + "ID: " + getId() +
                 "\n" + "Name: " + getName() +

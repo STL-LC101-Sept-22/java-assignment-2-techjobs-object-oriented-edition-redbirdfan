@@ -2,9 +2,12 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class CoreCompetency {
+public class CoreCompetency extends JobField {
 
-    private int id;
+    public CoreCompetency(String value){
+        super(value);
+    }
+ /*   private int id;
     private static int nextId = 1;
     private String value;
 
@@ -24,7 +27,7 @@ public class CoreCompetency {
     public String toString() {
         return value;
     }
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,7 +45,7 @@ public class CoreCompetency {
     //  ONLY a getter for the 'id' field.
 
 
-    public String getValue() {
+     public String getValue() {
         return value;
     }
 
@@ -53,4 +56,5 @@ public class CoreCompetency {
     public int getId() {
         return id;
     }
+
 }

@@ -29,7 +29,7 @@ public class JobTest {
         assertEquals(job1.getPositionType(), "Quality Control");
         assertEquals(job1.getCoreCompetency(), "Persistance");
         assertTrue(job1.getId() == 1);
-        assertTrue(job1.getName() =="Product Tester");
+        assertTrue(job1.getName() == "Product Tester");
         assertTrue(job1.getEmployer() == "ACME");
         assertTrue(job1.getLocation() == "Desert");
         assertTrue(job1.getPositionType() == "Quality Control");
@@ -49,7 +49,8 @@ public class JobTest {
     @Test
 
     public void testToStringStartsAndEndsWithNewLine() {
-        Job job1 = new Job("cashier", "McDonalds", "St. Louis", "Part-Time", "Basic Math");
+        Job job1 = new Job("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
+        String test = job1.toString();
         String testBuild = "\n";
         assertTrue(job1.toString().startsWith(testBuild));
         assertTrue(job1.toString().endsWith(testBuild));
@@ -68,10 +69,12 @@ public class JobTest {
         assertFalse(job1.toString().contains("Name: " + job1.getId()));
     }
 
-    @Test
+   @Test
     public void testToStringHandlesEmptyField() {
-        Job job1 = new Job("cashier", "McDonalds", "St. Louis", "Part-Time", null);
-        assertFalse((job1.toString().contains("Data not available")));
+       Job job1 = new Job("cashier", "McDonalds", "St. Louis", "Part-Time", "");
+       String test = job1.getCoreCompetency();
+       test = "Data not available";
+       assertTrue((job1.toString().contains("Data not available")));
 
-    }
+   }
 }
