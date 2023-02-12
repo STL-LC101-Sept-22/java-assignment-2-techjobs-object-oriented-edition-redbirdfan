@@ -3,20 +3,22 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 public abstract class JobField {
-
+/*
     public int id;
     public static int nextId = 1;
     public String value;
 
 
 
-    public JobField(int id) {
-        this.id = nextId;
-        nextId++;
-    }
+   // public JobField(int id) {
+     //   this.id = nextId;
+       // nextId++;
+    //}
 
     public JobField(String value) {
-      //  this();
+        //this();
+        this.id = nextId;
+        nextId++;
         this.value = value;
     }
 
@@ -25,6 +27,7 @@ public abstract class JobField {
 
     @Override
     public String toString(){
+
         return value;
     }
 
@@ -52,6 +55,6 @@ public abstract class JobField {
        // this();
         this.value = value;
     }
-
+*/
 }
 

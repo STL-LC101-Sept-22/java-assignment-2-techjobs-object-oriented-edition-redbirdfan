@@ -1,4 +1,5 @@
 package org.launchcode.techjobs.oo;
+import javax.swing.text.Position;
 import java.util.Objects;
 
 public class Job {
@@ -7,10 +8,10 @@ public class Job {
     private static int nextId = 1;
 
     private static String name;
-    private String employer;
-    private String location;
-    private String positionType;
-    private String coreCompetency;
+    private Employer employer;
+    private Location location;
+    private PositionType positionType;
+    private CoreCompetency coreCompetency;
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -20,7 +21,7 @@ public class Job {
         nextId++;
     }
 
-    public Job(String name, String employer, String location, String positionType, String coreCompetency) {
+    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -51,31 +52,46 @@ public class Job {
 
 
     public static String getName() {
-        return name;
+        if(name == ""){
+            return "Data not available";
+        } else
+            return name;
     }
 
-    public String getEmployer() {
-        return employer;
+    public String getEmployer(){
+        if(getEmployer() == ""){
+            return "Data not available";
+        } else
+            return getEmployer();
     }
 
     public String getLocation() {
-        return location;
+        if (getLocation() == "") {
+            return "Data not available";
+        } else
+            return getLocation();
     }
-
-    public String getPositionType() {
-        return positionType;
-    }
+    public String getPositionType(){
+        if(getPositionType() == ""){
+        return "Data not available";
+        } else
+        return getPositionType();
+        }
 
     public String getCoreCompetency() {
-        return coreCompetency;
-    }
+        if(getCoreCompetency() == ""){
+            return "Data not available";
+        } else
+                return getCoreCompetency();
+        }
+
 
 
     public void setName(String name) {
         this.name = name;
     }
     public void setEmployer(String employer) {
-        this.employer = employer;
+        this.employer = Employer().employer;
     }
 
     public void setLocation(String location) {
@@ -90,25 +106,21 @@ public class Job {
         }
 
 
+
     public int getId() {
         return id;
     }
 
+
     @Override
     public String toString() {
-        String[] Fields = {name, employer, location, positionType, coreCompetency};
-                for (int i = 0; i < Fields.length; i++) {
-                    if (Fields[i] == "") {
-                        Job[i] = "Data not available";
-                    }
-                    }
 
 
         return ("\n" + "ID: " + getId() +
-                "\n" + "Name: " + Fields[0] +
-                "\n" + "Employer: " + Fields[1] +
-                "\n" + "Location: " + Fields[2] +
-                "\n" + "Position Type: " + Fields[3] +
-                "\n" + "Core Competency: " + Fields[4] + "\n");
+                "\n" + "Name: " + getName() +
+                "\n" + "Employer: " + getEmployer() +
+                "\n" + "Location: " + getLocation() +
+                "\n" + "Position Type: " + getPositionType() +
+                "\n" + "Core Competency: " + getCoreCompetency() + "\n");
     }
 }
