@@ -22,11 +22,12 @@ public class Job {
 
     public Job(String name, String employer, String location, String positionType, String coreCompetency) {
         this();
+        this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        this.name = name;
+
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -95,23 +96,19 @@ public class Job {
 
     @Override
     public String toString() {
-            if (this.name == "") {
-                this.name = "Data not available";
-            } else if (this.employer == "") {
-                this.employer = "Data not available";
-            } else if(this.location == "") {
-                this.location = "Data not available";
-            } else if (this.positionType == "") {
-                this.positionType = "Data not available";
-            } else if (this.coreCompetency == "") {
-                this.coreCompetency = "Data not available";
-            }
+        String[] Fields = {name, employer, location, positionType, coreCompetency};
+                for (int i = 0; i < Fields.length; i++) {
+                    if (Fields[i] == "") {
+                        Job[i] = "Data not available";
+                    }
+                    }
+
 
         return ("\n" + "ID: " + getId() +
-                "\n" + "Name: " + getName() +
-                "\n" + "Employer: " + getEmployer() +
-                "\n" + "Location: " + getLocation() +
-                "\n" + "Position Type: " + getPositionType() +
-                "\n" + "Core Competency: " + getCoreCompetency() + "\n");
+                "\n" + "Name: " + Fields[0] +
+                "\n" + "Employer: " + Fields[1] +
+                "\n" + "Location: " + Fields[2] +
+                "\n" + "Position Type: " + Fields[3] +
+                "\n" + "Core Competency: " + Fields[4] + "\n");
     }
 }

@@ -30,19 +30,19 @@ public class Location extends JobField{
         return value;
     }
 */
-    @Override
+ /*   @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Location)) return false;
         Location location = (Location) o;
         return getId() == location.getId();
     }
-
-    @Override
+*/
+  /*  @Override
     public int hashCode() {
         return Objects.hash(getId());
     }
-
+*/
     // Getters and Setters:
 
  /*  public int getId() {
