@@ -52,65 +52,48 @@ public class Job {
 
 
     public static String getName() {
-        if(name == ""){
-            return "Data not available";
-        } else
-            return name;
+        return name;
     }
 
-    public String getEmployer(){
-        if(getEmployer() == ""){
-            return "Data not available";
-        } else
-            return getEmployer();
+    public static void setName(String name) {
+        Job.name = name;
     }
 
-    public String getLocation() {
-        if (getLocation() == "") {
-            return "Data not available";
-        } else
-            return getLocation();
-    }
-    public String getPositionType(){
-        if(getPositionType() == ""){
-        return "Data not available";
-        } else
-        return getPositionType();
-        }
-
-    public String getCoreCompetency() {
-        if(getCoreCompetency() == ""){
-            return "Data not available";
-        } else
-                return getCoreCompetency();
-        }
-
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setEmployer(String employer) {
-        this.employer = Employer().employer;
+    public Employer getEmployer() {
+        return employer;
     }
 
-    public void setLocation(String location) {
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
         this.location = location;
     }
-    public void setPositionType(String positionType) {
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public void setCoreCompetency(String coreCompetency) {
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
-        }
-
-
+    }
 
     public int getId() {
         return id;
     }
-
 
     @Override
     public String toString() {
