@@ -1,5 +1,4 @@
 package org.launchcode.techjobs.oo;
-import javax.swing.text.Position;
 import java.util.Objects;
 
 public class Job {
@@ -21,7 +20,7 @@ public class Job {
         nextId++;
     }
 
-    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -52,6 +51,7 @@ public class Job {
 
 
     public static String getName() {
+
         return name;
     }
 
@@ -97,7 +97,11 @@ public class Job {
 
     @Override
     public String toString() {
-
+        if (getName() == ""){
+            name = "Data not available";
+        }
+        if (getEmployer().getValue() == "") {
+        }
 
         return ("\n" + "ID: " + getId() +
                 "\n" + "Name: " + getName() +
@@ -105,5 +109,6 @@ public class Job {
                 "\n" + "Location: " + getLocation() +
                 "\n" + "Position Type: " + getPositionType() +
                 "\n" + "Core Competency: " + getCoreCompetency() + "\n");
+
     }
 }
