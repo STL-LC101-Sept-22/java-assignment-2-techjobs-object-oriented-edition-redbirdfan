@@ -23,7 +23,11 @@ public class Job {
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.name = name;
+
+        if (name == ""){
+            this.name = "Data not available";
+        } else this.name = name;
+
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
@@ -97,26 +101,14 @@ public class Job {
     }
 
     @Override
-    public String toString() {
-        String[] Fields = {getEmployer().getValue(), getLocation().getValue(), getPositionType().getValue(), getCoreCompetency().getValue()};
-        Sys if (getName() == "") {
-            name = "Data not available";
-            ;
-            for (int i = 0 ; i < Fields.length; i++) {
-                if (Fields[i] == "") {
-                    Fields[i].equals("Data not available");
-                    System.out.println(Fields[i]);
+    public String toString(){
 
-
-                }
-            }
-        }
             return ("\n" + "ID: " + getId() +
                     "\n" + "Name: " + getName() +
                     "\n" + "Employer: " + getEmployer() +
                     "\n" + "Location: " + getLocation() +
                     "\n" + "Position Type: " + getPositionType() +
-                    "\n" + "Core Competency: " + Fields[3] + "\n");
+                    "\n" + "Core Competency: " + getCoreCompetency() + "\n");
 
 
         }

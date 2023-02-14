@@ -49,22 +49,26 @@ public class JobTest {
 
     public void testToStringStartsAndEndsWithNewLine() {
         Job job1 = new Job("Web Developer",  new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
-        String test = job1.toString();
-        String testBuild = "\n";
-        assertEquals(test.indexOf('\n'), 0);
-        assertEquals(test.endsWith(testBuild), true);
+
+       char first = job1.toString().charAt(0);
+       char last = job1.toString().charAt(job1.toString().length()-1);
+       assertEquals(first, '\n');
+       assertEquals(last, '\n');
     }
 
     @Test
 
     public void testToStringContainsCorrectLabelsAndData() {
         Job job1 = new Job("cashier", new Employer("McDonalds"), new Location("St. Louis"), new PositionType("Part-Time"), new CoreCompetency("Basic Math"));
+        String test = String.format('\n' + "ID: %d" + '\n' + "Name: %s" + '\n' + "Employer: %s" + '\n' + "Location: %s" + '\n' + "Position Type: %s" + '\n' + "Core Competency: %s" + '\n',
+                job1.getId(), job1.getName(), job1.getEmployer(), job1.getLocation(), job1.getPositionType(), job1.getCoreCompetency());
+        assertEquals(job1.toString(), test);
 
         assertEquals(job1.getId(), 1);
         assertEquals(job1.getName(), "cashier");
-        assertEquals(job1.getEmployer(), "McDonalds");
-        assertEquals(job1.getLocation(), "St. Louis");
-        assertEquals(job1.getPositionType(), "Part-Time");
+        assertEquals(job1.getEmployer().getValue(), "McDonalds");
+        assertEquals(job1.getLocation().getValue(), "St. Louis");
+        assertEquals(job1.getPositionType().getValue(), "Part-Time");
         assertEquals(job1.getCoreCompetency().getValue(), "Basic Math");
     }
 
@@ -75,6 +79,6 @@ public class JobTest {
        String testString = job1.toString();
        System.out.println(testString);
        assertTrue(job1.getName() == "Data not available");
-     //  assertEquals(job1.getCoreCompetency(), "Data not available");
+       assertEquals(job1.getCoreCompetency().getValue(), "Data not available");
    }
 }

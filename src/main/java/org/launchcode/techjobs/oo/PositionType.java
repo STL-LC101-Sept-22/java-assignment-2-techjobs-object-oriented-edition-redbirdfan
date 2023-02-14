@@ -2,12 +2,12 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class PositionType{
+public class PositionType extends JobField{
 
-    private int id;
+ /*   private int id;
     private static int nextId = 1;
     private String value;
-
+*/
     public PositionType() {
         id = nextId;
         nextId++;
@@ -15,7 +15,9 @@ public class PositionType{
 
     public PositionType(String value) {
         this();
-        this.value = value;
+        if (value == ""){
+            this.value = "Data not available";
+        } else this.value = value;
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
