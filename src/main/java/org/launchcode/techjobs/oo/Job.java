@@ -1,4 +1,5 @@
 package org.launchcode.techjobs.oo;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Job {
@@ -97,18 +98,26 @@ public class Job {
 
     @Override
     public String toString() {
-        if (getName() == ""){
+        String[] Fields = {getEmployer().getValue(), getLocation().getValue(), getPositionType().getValue(), getCoreCompetency().getValue()};
+        Sys if (getName() == "") {
             name = "Data not available";
-        }
-        if (getEmployer().getValue() == "") {
-        }
+            ;
+            for (int i = 0 ; i < Fields.length; i++) {
+                if (Fields[i] == "") {
+                    Fields[i].equals("Data not available");
+                    System.out.println(Fields[i]);
 
-        return ("\n" + "ID: " + getId() +
-                "\n" + "Name: " + getName() +
-                "\n" + "Employer: " + getEmployer() +
-                "\n" + "Location: " + getLocation() +
-                "\n" + "Position Type: " + getPositionType() +
-                "\n" + "Core Competency: " + getCoreCompetency() + "\n");
 
+                }
+            }
+        }
+            return ("\n" + "ID: " + getId() +
+                    "\n" + "Name: " + getName() +
+                    "\n" + "Employer: " + getEmployer() +
+                    "\n" + "Location: " + getLocation() +
+                    "\n" + "Position Type: " + getPositionType() +
+                    "\n" + "Core Competency: " + Fields[3] + "\n");
+
+
+        }
     }
-}
